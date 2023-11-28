@@ -46,7 +46,7 @@ def main(input_file, output_dir, model_file):
     # Url based model
     test_features2, corpus = preprocess_url_dataset(
         test_data, train=False, corpus=corpus)
-    test_predictions2 = pipeline_text.predict_proba(test_features2)
+    test_predictions2 = pipeline_url.predict_proba(test_features2)
 
     # Final model
     test_features_final = np.concatenate(

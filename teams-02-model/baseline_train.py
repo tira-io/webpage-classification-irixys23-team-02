@@ -211,7 +211,7 @@ def main(data_dir, model_output):
     train_features2, corpus = preprocess_url_dataset(train_data, train=True)
     pipeline_url = SGDClassifier(loss='modified_huber')
     pipeline_url.fit(train_features2, train_labels)
-    train_predictions2 = pipeline_text.predict_proba(train_features2)
+    train_predictions2 = pipeline_url.predict_proba(train_features2)
 
     # Final model
     train_features_final = np.concatenate(
