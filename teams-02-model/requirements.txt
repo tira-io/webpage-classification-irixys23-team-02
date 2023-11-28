@@ -1,0 +1,10 @@
+beautifulsoup4==4.12.2
+nltk==3.8.1
+tira==0.0.101
+scikit-learn==1.3.2
+lxml==4.9.3
+matplotlib
+pandas
+numpy
+wordninja
+langdetect
