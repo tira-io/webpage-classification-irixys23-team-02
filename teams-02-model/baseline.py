@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import argparse
-from sklearn.linear_model import SGDClassifier
 import os
 import joblib
 import numpy as np
@@ -64,11 +63,11 @@ def main(input_file, output_dir, model_file):
 
     # Final model
     test_features_final = np.concatenate([test_predictions1, test_predictions2], axis=1)
-    model_final = SGDClassifier()
     test_predictions_final = model_final.predict(test_features_final)
 
     # Save the predictions
     test_data["prediction"] = test_predictions_final
+    test_data = test_data.reset_index()
     output_path = os.path.join(output_dir, "predictions.jsonl")
     test_data[["uid", "prediction"]].to_json(output_path, orient="records", lines=True)
 
