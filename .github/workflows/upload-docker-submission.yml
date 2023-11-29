@@ -5,11 +5,11 @@ on:
       dockerpath:
         description: The path to the directory where the Docker image should be build.
         required: true
-        default: trivial-baseline
+        default: teams-02-model
       command:
         description: The command that is to be executed to run the software. The variable $inputDataset points to the input directory that contains the inputs.jsonl file, the variable $outputDir points to the directory where the resulting predictions.jsonl should be stored.
         required: true
-        default: python3 /baseline.py -i $inputDataset/inputs.jsonl -o $outputDir/predictions.jsonl
+        default: python3 /app/baseline.py -i $inputDataset/inputs.jsonl -o $outputDir -m /app/model.pkl
       dockerfile:
         description: The Dockerfile to build. This Dockerfile is expected to be contained within the dockerpath.
         required: false
