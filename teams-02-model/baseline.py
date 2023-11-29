@@ -5,8 +5,8 @@ import joblib
 import numpy as np
 from baseline_train import load_data, preprocess_text_dataset, preprocess_url_dataset
 
-nltk.download("stopwords")
-nltk.download("punkt")
+# nltk.download("stopwords")
+# nltk.download("punkt")
 
 
 def parse_args():
